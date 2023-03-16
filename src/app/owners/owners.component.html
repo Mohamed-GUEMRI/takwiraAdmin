@@ -1,0 +1,19 @@
+<h1>Owners List</h1>
+
+<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+            <th>Email</th>
+			<th>Actions</th>
+		</tr>
+		<tr *ngFor="let owner of owners">
+			<td>{{ owner.id }}</td>
+			<td>{{ owner.name }}</td>
+            <td>{{ owner.email }}</td>
+			<td>
+				<button (click)="activateOwner(owner.id)" style="background-color: rgb(33, 170, 33);" [disabled]="owner.status">Activate</button> | <button (click)="deactivateOwner(owner.id)" style="background-color: rgb(199, 199, 22);" [disabled]= "!owner.status">Desactivate</button>
+			</td>
+		</tr>
+	</table>
+	
